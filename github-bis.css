@@ -5,40 +5,46 @@
 
 @include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
 
+/* open-sans-regular - latin-ext_latin */
 @font-face {
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: normal;
-    src: local('Open Sans Regular'),url('./github/400.woff') format('woff');
-}
-
-@font-face {
+    src: local('Open Sans Regular'), local('OpenSans-Regular'), url('./github/open-sans-v17-latin-ext_latin-regular.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD, U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* open-sans-italic - latin-ext_latin */
+  @font-face {
     font-family: 'Open Sans';
     font-style: italic;
     font-weight: normal;
-    src: local('Open Sans Italic'),url('./github/400i.woff') format('woff');
-}
-
-@font-face {
+    src: local('Open Sans Italic'), local('OpenSans-Italic'), url('./github/open-sans-v17-latin-ext_latin-italic.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD, U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* open-sans-700 - latin-ext_latin */
+  @font-face {
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: bold;
-    src: local('Open Sans Bold'),url('./github/700.woff') format('woff');
-}
-
-@font-face {
+    src: local('Open Sans Bold'), local('OpenSans-Bold'), url('./github/open-sans-v17-latin-ext_latin-700.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD, U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* open-sans-700italic - latin-ext_latin */
+  @font-face {
     font-family: 'Open Sans';
     font-style: italic;
     font-weight: bold;
-    src: local('Open Sans Bold Italic'),url('./github/700i.woff') format('woff');
-}
+    src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'), url('./github/open-sans-v17-latin-ext_latin-700italic.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD, U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
 
 html {
     font-size: 16px;
+    -webkit-font-smoothing: antialiased;
 }
 
 body {
-    font-family: "Open Sans","Clear Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
     color: rgb(51, 51, 51);
     line-height: 1.6;
 }
@@ -49,6 +55,19 @@ body {
   	padding: 30px;
     padding-bottom: 100px;
 }
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
 #write > ul:first-child,
 #write > ol:first-child{
     margin-top: 30px;
@@ -116,6 +135,24 @@ h2 {
     line-height: 1.225;
     border-bottom: 1px solid #eee;
 }
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
 h3 {
     padding-top: .3em;
     font-size: 1.60em;
@@ -181,7 +218,7 @@ table {
     word-break: initial;
 }
 table tr {
-    border-top: 1px solid #dfe2e5;
+    border: 1px solid #dfe2e5;
     margin: 0;
     padding: 0;
 }
@@ -189,26 +226,24 @@ table tr:nth-child(2n),
 thead {
     background-color: #f8f8f8;
 }
-table tr th {
+table th {
     font-weight: bold;
     border: 1px solid #dfe2e5;
     border-bottom: 0;
-    text-align: left;
     margin: 0;
     padding: 6px 13px;
 }
-table tr td {
+table td {
     border: 1px solid #dfe2e5;
-    text-align: left;
     margin: 0;
     padding: 6px 13px;
 }
-table tr th:first-child,
-table tr td:first-child {
+table th:first-child,
+table td:first-child {
     margin-top: 0;
 }
-table tr th:last-child,
-table tr td:last-child {
+table th:last-child,
+table td:last-child {
     margin-bottom: 0;
 }
 
@@ -357,9 +392,9 @@ header, .context-menu, .megamenu-content, footer{
     color: #b4654d;
 }
 
-.html-for-mac .context-menu {
+/*.html-for-mac {
     --item-hover-bg-color: #E6F0FE;
-}
+}*/
 
 #md-notification .btn {
     border: 0;
@@ -367,6 +402,7 @@ header, .context-menu, .megamenu-content, footer{
 
 .dropdown-menu .divider {
     border-color: #e5e5e5;
+    opacity: 0.4;
 }
 
 .ty-preferences .window-content {
@@ -376,4 +412,166 @@ header, .context-menu, .megamenu-content, footer{
 .ty-preferences .nav-group-item.active {
     color: white;
     background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0));
+}
+
+/**************************************
+ * Header Counters in TOC
+ **************************************/
+/* No link underlines in TOC */
+.md-toc-inner {
+    text-decoration: none;
+}
+
+.md-toc-content {
+    counter-reset: h1toc
+}
+.md-toc-h1 {
+    margin-left: 0;
+    font-size: 1.5rem;
+    counter-reset: h2toc
+}
+.md-toc-h2 {
+    font-size: 1.1rem;
+    margin-left: 2rem;
+    /* margin-left: 0; */
+    counter-reset: h3toc
+}
+.md-toc-h3 {
+    margin-left: 3rem;
+    /* margin-left: 0; */
+    font-size: .9rem;
+    counter-reset: h4toc
+}
+.md-toc-h4 {
+    margin-left: 4rem;
+    /* margin-left: 0; */
+    font-size: .85rem;
+    counter-reset: h5toc
+}
+.md-toc-h5 {
+    margin-left: 5rem;
+    /* margin-left: 0; */
+    font-size: .8rem;
+    counter-reset: h6toc
+}
+.md-toc-h6 {
+    margin-left: 6rem;
+    /* margin-left: 0; */
+    font-size: .75rem;
+}
+
+/* .md-toc-h1:before {
+    color: black;
+    counter-increment: h1toc;
+    content: counter(h1toc) ". "
+} */
+.md-toc-h1 .md-toc-inner {
+    margin-left: 0;
+}
+.md-toc-h2:before {
+    /* color: black; */
+    counter-increment: h2toc;
+    /* content: counter(h2toc) ". "; */
+    content: counter(h2toc, cjk-ideographic) "、";
+}
+.md-toc-h2 .md-toc-inner {
+    margin-left: 0;
+}
+.md-toc-h3:before {
+    /* color: black; */
+    counter-increment: h3toc;
+    /* content: counter(h2toc) ". " counter(h3toc) ". "; */
+    content: "(" counter(h3toc, cjk-ideographic) ") ";
+}
+.md-toc-h3 .md-toc-inner {
+    margin-left: 0;
+}
+.md-toc-h4:before {
+    /* color: black; */
+    counter-increment: h4toc;
+    /* content: counter(h2toc) ". " counter(h3toc) ". " counter(h4toc) ". "; */
+    content: counter(h4toc) ". ";
+}
+.md-toc-h4 .md-toc-inner {
+    margin-left: 0;
+}
+.md-toc-h5:before {
+    /* color: black; */
+    counter-increment: h5toc;
+    /* content: counter(h2toc) ". " counter(h3toc) ". " counter(h4toc) ". " counter(h5toc) ". "; */
+    content: "(" counter(h5toc) ") ";
+}
+.md-toc-h5 .md-toc-inner {
+    margin-left: 0;
+}
+.md-toc-h6:before {
+    /* color: black; */
+    counter-increment: h6toc;
+    /* content: counter(h2toc) ". " counter(h3toc) ". " counter(h4toc) ". " counter(h5toc) ". " counter(h6toc) ". "; */
+    content: counter(h6toc, lower-roman) ". ";
+}
+.md-toc-h6 .md-toc-inner {
+    margin-left: 0;
+}
+
+/**************************************
+ * Header Counters in Content
+ **************************************/
+
+/** initialize css counter */
+#write { counter-reset: h1 }
+h1 { counter-reset: h2 }
+h2 { counter-reset: h3 }
+h3 { counter-reset: h4 }
+h4 { counter-reset: h5 }
+h5 { counter-reset: h6 }
+
+/** put counter result into headings */
+/* #write h1:before {
+    counter-increment: h1;
+    content: counter(h1) ". "
+} */
+#write h2:before {
+    counter-increment: h2;
+    content: counter(h2, cjk-ideographic) "、";
+}
+#write h3:before, h3.md-focus.md-heading:before { /*override the default style for focused headings */
+    counter-increment: h3;
+    /* content: counter(h2) "." counter(h3) ". " */
+    content: "(" counter(h3, cjk-ideographic) ") ";
+}
+#write h4:before, h4.md-focus.md-heading:before {
+    counter-increment: h4;
+    /* content: counter(h2) "." counter(h3) "." counter(h4) ". "; */
+    content: counter(h4) ". ";
+}
+#write h5:before, h5.md-focus.md-heading:before {
+    counter-increment: h5;
+    /* content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) ". "; */
+    content: "(" counter(h5) ") ";
+}
+#write h6:before, h6.md-focus.md-heading:before {
+    counter-increment: h6;
+    /* content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) ". "; */
+    content: counter(h6, lower-roman) ". ";
+}
+#write>h3.md-focus:before, #write>h4.md-focus:before, #write>h5.md-focus:before, #write>h6.md-focus:before, h3.md-focus:before, h4.md-focus:before, h5.md-focus:before, h6.md-focus:before {
+    color: inherit;
+    border: inherit;
+    border-radius: inherit;
+    position: inherit;
+    left: initial;
+    float: none;
+    top: initial;
+    font-size: inherit;
+    padding-left: inherit;
+    padding-right: inherit;
+    vertical-align: inherit;
+    font-weight: inherit;
+    line-height: inherit;
 }
