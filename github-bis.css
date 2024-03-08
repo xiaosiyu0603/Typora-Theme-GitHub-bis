@@ -3,7 +3,7 @@
     --control-text-color: #777;
 }
 
-@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+@include-when-export url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
 
 /* open-sans-regular - latin-ext_latin */
 @font-face {
@@ -378,6 +378,10 @@ header, .context-menu, .megamenu-content, footer{
 .mac-seamless-mode #typora-sidebar {
     background-color: #fafafa;
     background-color: var(--side-bar-bg-color);
+}
+
+.mac-os #write{
+    caret-color: AccentColor;
 }
 
 .md-lang {
